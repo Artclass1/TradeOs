@@ -76,7 +76,7 @@ Ensure your advice covers government rules, quality vs price, couriers, margin e
   }`;
 
   const response = await ai.models.generateContent({
-    model: 'gemini-2.5-flash',
+    model: 'gemini-3.1-pro-preview',
     contents: [
       systemPrompt,
       "EXPECTED JSON FORMAT (Object only, no markdown wrappers):\n" + jsonSchemaFormat,
@@ -85,10 +85,11 @@ Ensure your advice covers government rules, quality vs price, couriers, margin e
     config: {
       temperature: 0.2,
       responseMimeType: 'application/json',
+      tools: [{ googleSearch: {} }]
     }
   });
 
-  const text = response.text();
+  const text = response.text;
   if (!text) throw new Error("No response from AI");
   
   try {

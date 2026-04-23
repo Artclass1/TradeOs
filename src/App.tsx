@@ -28,7 +28,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans flex flex-col p-4 md:p-8">
       {/* Global Header */}
-      <header className="flex justify-between items-end mb-10">
+      <header className="flex justify-between items-end mb-10 pb-4 border-b border-zinc-800">
         <div className="flex flex-col">
           <span className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-1">TradeOS / Intelligence Platform</span>
           <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-none">EX/IM<br/>ENGINE</h1>
@@ -91,7 +91,7 @@ export default function App() {
                </div>
                <div className="md:w-1/2 flex flex-col items-start md:items-end text-left md:text-right">
                   <p className="text-zinc-400 text-lg leading-relaxed">{data.executiveSummary}</p>
-                  <button onClick={() => {setData(null); setQuery('');}} className="mt-4 text-[10px] uppercase font-bold tracking-widest border-b border-zinc-600 hover:text-white pb-1">← New Query</button>
+                  <button onClick={() => {setData(null); setQuery('');}} className="no-print mt-4 text-[10px] uppercase font-bold tracking-widest border-b border-zinc-600 hover:text-white pb-1">← New Query</button>
                </div>
             </div>
 
@@ -207,9 +207,9 @@ export default function App() {
                 </div>
                 <button 
                   onClick={() => window.print()}
-                  className="w-full mt-6 py-4 border-2 border-zinc-700 text-xs font-black uppercase tracking-widest hover:bg-white hover:text-black transition-colors"
+                  className="no-print w-full mt-6 py-4 border-2 border-zinc-700 text-xs font-black uppercase tracking-widest hover:bg-white hover:text-black transition-colors"
                 >
-                  Export Dataset (.JSON)
+                  Export PDF Report
                 </button>
               </section>
             </div>
@@ -218,7 +218,7 @@ export default function App() {
       </main>
 
       {/* Sticky Bottom Alert Bar */}
-      <footer className="mt-8 pt-4 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4">
+      <footer className="no-print mt-8 pt-4 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex gap-8">
           <div className="flex gap-2 items-center">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
